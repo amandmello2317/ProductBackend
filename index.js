@@ -1,7 +1,7 @@
 const express = require('express');
 const ConnectDB = require('./db');
-const route = require('./Router/ProductRoute');
-
+const productroute = require('./Router/ProductRoute');
+const booksrouter = require('./Router/BooksRouter');
 
 const app = express();
 const port = 4000;
@@ -10,7 +10,8 @@ app.use(express.json());
 ConnectDB();
 
 
-app.use("/product", route)
+app.use("/product", productroute)
+app.use("/books", booksrouter)
 
 app.get("/", (req,res) => {
     console.log("Hello");
