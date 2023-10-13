@@ -1,6 +1,6 @@
 const { model } = require("mongoose");
 const ProductSchema = require("../Module/ProductSchema");
-
+const a=1;
 const ProductInsert = async (req,res) => {
     try {
         const {name,description,price,quantity} = req.body
